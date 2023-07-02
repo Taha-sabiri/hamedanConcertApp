@@ -25,26 +25,77 @@ class SingupNum extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 15,
                         color: Color.fromRGBO(54, 54, 54, 1),
-                        decoration: TextDecoration.none),
+                        decoration: TextDecoration.none,
+                        fontFamily: 'Kalame',
+                        fontWeight: FontWeight.w700),
                   ),
-                  TextFormField(
-                    textAlign: TextAlign.left,
-                    decoration: InputDecoration(
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        border: OutlineInputBorder(),
-                        hintText: '+۹۸ ',
-                        labelText: "شماره تلفن",
-                        floatingLabelAlignment: FloatingLabelAlignment.start),
+                  SizedBox(
+                    height: 31,
                   ),
                   SizedBox(
                     height: 54,
                     width: 310,
-                    child: Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(21, 70, 248, 1),
-                          borderRadius: BorderRadius.circular(7)),
-                      child: Text("دریافت کد"),
+                    child: TextFormField(
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromRGBO(98, 98, 98, 1),
+                        decoration: TextDecoration.none,
+                        fontFamily: 'Kalame',
+                        fontWeight: FontWeight.w400,
+                      ),
+                      decoration: InputDecoration(
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                            color: Color.fromRGBO(21, 70, 248, 1),
+                          )),
+                          border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 1,
+                                  color: Color.fromRGBO(0, 0, 0, 0.26))),
+                          hintText: '۹۸+ ',
+                          hintStyle: TextStyle(
+                            fontSize: 13,
+                            color: Color.fromRGBO(158, 158, 158, 1),
+                            decoration: TextDecoration.none,
+                            fontFamily: 'Kalame',
+                            fontWeight: FontWeight.w700,
+                          ),
+                          labelText: "شماره تلفن",
+                          labelStyle: TextStyle(
+                            fontSize: 13,
+                            color: Color.fromRGBO(98, 98, 98, 1),
+                            decoration: TextDecoration.none,
+                            fontFamily: 'Kalame',
+                            fontWeight: FontWeight.w700,
+                          ),
+                          floatingLabelAlignment: FloatingLabelAlignment.start),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 31,
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: SizedBox(
+                      height: 54,
+                      width: 310,
+                      child: Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: Color.fromRGBO(21, 70, 248, 1),
+                            borderRadius: BorderRadius.circular(7)),
+                        child: Text(
+                          "دریافت کد",
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                              decoration: TextDecoration.none,
+                              fontFamily: 'Kalame',
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ),
                     ),
                   )
                 ]),
