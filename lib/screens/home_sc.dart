@@ -380,7 +380,7 @@ class Homescreen extends StatelessWidget {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
-                        color: Colors.blue),
+                        color: Color.fromRGBO(21, 70, 248, 1)),
                     child: Text(
                       concert[i].image,
                       style: TextStyle(
