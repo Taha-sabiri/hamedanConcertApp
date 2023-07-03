@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hamedanconcert/screens/home_sc.dart';
 import 'package:hamedanconcert/screens/singup_otp_sc.dart';
 
 class Singupinfo extends StatelessWidget {
@@ -119,8 +120,8 @@ class Singupinfo extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const OtpSc()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Homescreen()));
                 },
                 child: SizedBox(
                   height: 54,
