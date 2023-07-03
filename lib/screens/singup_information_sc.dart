@@ -120,8 +120,8 @@ class Singupinfo extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const Homescreen()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Homescreen()));
                 },
                 child: SizedBox(
                   height: 54,
