@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hamedanconcert/model/concert.dart';
 import 'package:hamedanconcert/model/news.dart';
 
-class NewsSc extends StatelessWidget {
+class ConcertSc extends StatelessWidget {
   final int index;
-  const NewsSc({super.key, required this.index});
+  const ConcertSc({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -48,14 +49,15 @@ class NewsSc extends StatelessWidget {
               height: 435,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      fit: BoxFit.cover, image: AssetImage(news[index].image))),
+                      fit: BoxFit.cover,
+                      image: AssetImage(concert[index].image))),
             ),
           ),
           Positioned(
             right: 15,
             top: 280,
             child: Text(
-              news[index].headertit,
+              concert[index].headertit,
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -171,7 +173,7 @@ class NewsSc extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 15, right: 15),
                     child: SizedBox(
-                      child: Text(news[index].tit,
+                      child: Text(concert[index].tit,
                           style: TextStyle(
                               fontSize: 15,
                               color: Color.fromRGBO(56, 56, 56, 1),

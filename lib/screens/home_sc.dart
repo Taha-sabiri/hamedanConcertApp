@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hamedanconcert/model/concert.dart';
 import 'package:hamedanconcert/model/news.dart';
+
+import 'package:hamedanconcert/screens/concert_sc.dart';
 import 'package:hamedanconcert/screens/news_sc.dart';
 
 class Homescreen extends StatelessWidget {
@@ -126,6 +128,9 @@ class Homescreen extends StatelessWidget {
                                             ),
                                             Text(
                                               news[index].tit,
+                                              softWrap: true,
+                                              overflow: TextOverflow.ellipsis,
+                                              maxLines: 3,
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 13,
@@ -253,244 +258,96 @@ class Homescreen extends StatelessWidget {
             ),
             Column(
               children: [
-                for (var item in concert)
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(item.image))),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            item.headertit,
-                            style: TextStyle(
-                                color: Color.fromRGBO(54, 54, 54, 1),
-                                fontSize: 13,
-                                fontFamily: 'Kalame',
-                                fontWeight: FontWeight.w900),
+                for (int i = 0; i < concert.length; i++)
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ConcertSc(index: i)));
+                    },
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(concert[i].image))),
                           ),
-                          SizedBox(
-                            width: 270,
-                            child: Text(
-                              item.tit,
-                              softWrap: true,
-                              maxLines: 2,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              concert[i].headertit,
                               style: TextStyle(
                                   color: Color.fromRGBO(54, 54, 54, 1),
                                   fontSize: 13,
                                   fontFamily: 'Kalame',
-                                  fontWeight: FontWeight.w400),
+                                  fontWeight: FontWeight.w900),
                             ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                width: 56,
-                                height: 17,
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(7),
-                                      color: Colors.blue),
-                                  child: Text(
-                                    item.group,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 10,
-                                        fontFamily: 'Kalame',
-                                        fontWeight: FontWeight.w600),
+                            SizedBox(
+                              width: 270,
+                              child: Text(
+                                concert[i].tit,
+                                softWrap: true,
+                                maxLines: 2,
+                                overflow: TextOverflow.clip,
+                                style: TextStyle(
+                                    color: Color.fromRGBO(54, 54, 54, 1),
+                                    fontSize: 13,
+                                    fontFamily: 'Kalame',
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  width: 56,
+                                  height: 17,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(7),
+                                        color: Colors.blue),
+                                    child: Text(
+                                      concert[i].group,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 10,
+                                          fontFamily: 'Kalame',
+                                          fontWeight: FontWeight.w600),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 150,
-                              ),
-                              Row(
-                                children: [
-                                  Icon(Icons.bookmark_outline),
-                                  Icon(Icons.ios_share)
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
+                                SizedBox(
+                                  width: 150,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(Icons.bookmark_outline),
+                                    Icon(Icons.ios_share)
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   )
               ],
             )
           ]),
         ),
       ),
-    );
-  }
-
-  Row _ro(int i) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
-                    fit: BoxFit.cover, image: AssetImage(concert[i].image))),
-          ),
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              concert[i].headertit,
-              style: TextStyle(
-                  color: Color.fromRGBO(54, 54, 54, 1),
-                  fontSize: 13,
-                  fontFamily: 'Kalame',
-                  fontWeight: FontWeight.w900),
-            ),
-            SizedBox(
-              width: 270,
-              child: Text(
-                concert[i].tit,
-                style: TextStyle(
-                    color: Color.fromRGBO(54, 54, 54, 1),
-                    fontSize: 13,
-                    fontFamily: 'Kalame',
-                    fontWeight: FontWeight.w400),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
-                  width: 56,
-                  height: 17,
-                  child: Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(7),
-                        color: Color.fromRGBO(21, 70, 248, 1)),
-                    child: Text(
-                      concert[i].image,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10,
-                          fontFamily: 'Kalame',
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 150,
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.bookmark_outline),
-                    Icon(Icons.ios_share)
-                  ],
-                )
-              ],
-            )
-          ],
-        )
-      ],
-    );
-  }
-
-  Row _item() {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/41719.jpg'))),
-          ),
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "کنسرت همدان سیروان خسروی",
-              style: TextStyle(
-                  color: Color.fromRGBO(54, 54, 54, 1),
-                  fontSize: 13,
-                  fontFamily: 'Kalame',
-                  fontWeight: FontWeight.w900),
-            ),
-            SizedBox(
-              width: 270,
-              child: Text(
-                "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از ...",
-                style: TextStyle(
-                    color: Color.fromRGBO(54, 54, 54, 1),
-                    fontSize: 13,
-                    fontFamily: 'Kalame',
-                    fontWeight: FontWeight.w400),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
-                  width: 56,
-                  height: 17,
-                  child: Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(7),
-                        color: Colors.blue),
-                    child: Text(
-                      "کنسرت پاپ",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10,
-                          fontFamily: 'Kalame',
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 150,
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.bookmark_outline),
-                    Icon(Icons.ios_share)
-                  ],
-                )
-              ],
-            )
-          ],
-        )
-      ],
     );
   }
 }
