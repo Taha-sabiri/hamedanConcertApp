@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hamedanconcert/screens/singup_otp_sc.dart';
 
 class SingupNum extends StatelessWidget {
   const SingupNum({super.key});
@@ -77,7 +78,10 @@ class SingupNum extends StatelessWidget {
                     height: 31,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const OtpSc()));
+                    },
                     child: SizedBox(
                       height: 54,
                       width: 310,
