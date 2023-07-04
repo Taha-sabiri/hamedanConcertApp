@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:getwidget/components/list_tile/gf_list_tile.dart';
 import 'package:hamedanconcert/model/concert.dart';
 import 'package:hamedanconcert/model/news.dart';
 
@@ -180,6 +181,111 @@ class ConcertSc extends StatelessWidget {
                               decoration: TextDecoration.none,
                               fontFamily: 'Kalame',
                               fontWeight: FontWeight.w300)),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Container(
+                      height: 70,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.1),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  " زمان:",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Color.fromRGBO(21, 70, 248, 1),
+                                      decoration: TextDecoration.none,
+                                      fontFamily: 'Kalame',
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                Text(
+                                  concert[index].time,
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color: Color.fromRGBO(56, 56, 56, 1),
+                                      decoration: TextDecoration.none,
+                                      fontFamily: 'Kalame',
+                                      fontWeight: FontWeight.w700),
+                                )
+                              ],
+                            ),
+                            Image(image: AssetImage("assets/images/Clock.png"))
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Container(
+                      height: 70,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.1),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  " مکان:",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Color.fromRGBO(21, 70, 248, 1),
+                                      decoration: TextDecoration.none,
+                                      fontFamily: 'Kalame',
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                Text(
+                                  concert[index].loc,
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color: Color.fromRGBO(56, 56, 56, 1),
+                                      decoration: TextDecoration.none,
+                                      fontFamily: 'Kalame',
+                                      fontWeight: FontWeight.w700),
+                                )
+                              ],
+                            ),
+                            Image(
+                                image: AssetImage("assets/images/Location.png"))
+                          ],
+                        ),
+                      ),
                     ),
                   )
                 ],

@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:hamedanconcert/screens/singup_otp_sc.dart';
 
-class SingupNum extends StatelessWidget {
+class SingupNum extends StatefulWidget {
   const SingupNum({super.key});
 
   @override
+  State<SingupNum> createState() => _SingupNumState();
+}
+
+final myControllernum = TextEditingController();
+final String number = myControllernum.text;
+
+class _SingupNumState extends State<SingupNum> {
+  @override
   Widget build(BuildContext context) {
+    void dispose() {
+      // Clean up the controller when the widget is disposed.
+      myControllernum.dispose();
+      super.dispose();
+    }
+
     return Container(
         color: Colors.white,
         child: Scaffold(
@@ -37,6 +52,7 @@ class SingupNum extends StatelessWidget {
                     height: 54,
                     width: 310,
                     child: TextFormField(
+                      controller: myControllernum,
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 13,
@@ -79,6 +95,18 @@ class SingupNum extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
+                      GFToast.showToast(
+                        'پیامک به شماره $number ارسال شد',
+                        context,
+                        toastPosition: GFToastPosition.BOTTOM,
+                        backgroundColor: Color.fromRGBO(21, 70, 248, 1),
+                        textStyle: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                            decoration: TextDecoration.none,
+                            fontFamily: 'Kalame',
+                            fontWeight: FontWeight.w700),
+                      );
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const OtpSc()));
                     },

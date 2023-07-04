@@ -78,8 +78,11 @@ class Homescreen extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 10),
                         child: InkWell(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => NewsSc(index: index)));
+                            Navigator.of(context, rootNavigator: true)
+                                .push(MaterialPageRoute(
+                                    builder: (context) => new NewsSc(
+                                          index: index,
+                                        )));
                           },
                           child: Container(
                             height: 340,
@@ -261,8 +264,9 @@ class Homescreen extends StatelessWidget {
                 for (int i = 0; i < concert.length; i++)
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ConcertSc(index: i)));
+                      Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute(
+                              builder: (context) => ConcertSc(index: i)));
                     },
                     child: Row(
                       children: [

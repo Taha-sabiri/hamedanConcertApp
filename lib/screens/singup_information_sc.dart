@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:hamedanconcert/screens/home_sc.dart';
+import 'package:hamedanconcert/screens/navbarpage.dart';
 import 'package:hamedanconcert/screens/singup_otp_sc.dart';
 
-class Singupinfo extends StatelessWidget {
+class Singupinfo extends StatefulWidget {
   const Singupinfo({super.key});
 
   @override
+  State<Singupinfo> createState() => _SingupinfoState();
+}
+
+final myControllername = TextEditingController();
+final String name = myControllername.text;
+
+final myControllergmail = TextEditingController();
+final String gmail = myControllergmail.text;
+
+class _SingupinfoState extends State<Singupinfo> {
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    myControllername.dispose();
+    myControllergmail.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -36,6 +56,7 @@ class Singupinfo extends StatelessWidget {
                 height: 54,
                 width: 310,
                 child: TextFormField(
+                  controller: myControllername,
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 13,
@@ -79,6 +100,7 @@ class Singupinfo extends StatelessWidget {
                 height: 54,
                 width: 310,
                 child: TextFormField(
+                  controller: myControllergmail,
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 13,
@@ -120,8 +142,20 @@ class Singupinfo extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  GFToast.showToast(
+                    'حساب کاربری با موفقیت ساخته شد',
+                    context,
+                    toastPosition: GFToastPosition.BOTTOM,
+                    backgroundColor: Color.fromRGBO(21, 70, 248, 1),
+                    textStyle: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        decoration: TextDecoration.none,
+                        fontFamily: 'Kalame',
+                        fontWeight: FontWeight.w700),
+                  );
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Homescreen()));
+                      MaterialPageRoute(builder: (context) => Homepage()));
                 },
                 child: SizedBox(
                   height: 54,

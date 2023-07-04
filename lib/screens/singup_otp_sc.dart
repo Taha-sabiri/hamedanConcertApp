@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hamedanconcert/screens/singup_information_sc.dart';
+import 'package:hamedanconcert/screens/singup_number_sc.dart';
 
 class OtpSc extends StatelessWidget {
   const OtpSc({super.key});
@@ -21,7 +22,7 @@ class OtpSc extends StatelessWidget {
                     fontSize: 40),
               ),
               Text(
-                "کد ارسال شده به شماره ۰۹۱۰۲۸۷۶۷۰۲ را وارد کنید",
+                "کد ارسال شده به شماره $number را وارد کنید",
                 style: TextStyle(
                     fontSize: 15,
                     color: Color.fromRGBO(54, 54, 54, 1),
