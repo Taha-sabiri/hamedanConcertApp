@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hamedanconcert/screens/bookmark_sc.dart';
-import 'package:hamedanconcert/screens/home_sc.dart';
-import 'package:hamedanconcert/screens/setting_sc.dart';
+import '../screens/bookmark_sc.dart';
+import '../screens/home_sc.dart';
+import '../screens/setting_sc.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class Homepage extends StatelessWidget {

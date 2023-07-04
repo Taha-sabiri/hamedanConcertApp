@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hamedanconcert/screens/singup_information_sc.dart';
-import 'package:hamedanconcert/screens/singup_number_sc.dart';
+import '../screens/singup_information_sc.dart';
+import '../screens/singup_number_sc.dart';
 
 class OtpSc extends StatelessWidget {
   const OtpSc({super.key});

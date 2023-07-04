@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hamedanconcert/model/concert.dart';
-import 'package:hamedanconcert/model/news.dart';
+import '../model/concert.dart';
+import '../model/news.dart';
 
-import 'package:hamedanconcert/screens/concert_sc.dart';
-import 'package:hamedanconcert/screens/news_sc.dart';
+import '../screens/concert_sc.dart';
+import '../screens/news_sc.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});

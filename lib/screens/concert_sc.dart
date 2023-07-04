@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:getwidget/components/list_tile/gf_list_tile.dart';
-import 'package:hamedanconcert/model/concert.dart';
-import 'package:hamedanconcert/model/news.dart';
+
+import '../model/concert.dart';
 
 class ConcertSc extends StatelessWidget {
   final int index;

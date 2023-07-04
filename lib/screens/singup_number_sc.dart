@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:hamedanconcert/screens/singup_otp_sc.dart';
+import '../screens/singup_otp_sc.dart';
 
 class SingupNum extends StatefulWidget {
   const SingupNum({super.key});

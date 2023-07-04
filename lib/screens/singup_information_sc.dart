@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:hamedanconcert/screens/home_sc.dart';
-import 'package:hamedanconcert/screens/navbarpage.dart';
-import 'package:hamedanconcert/screens/singup_otp_sc.dart';
+
+import '../screens/navbarpage.dart';
 
 class Singupinfo extends StatefulWidget {
   const Singupinfo({super.key});

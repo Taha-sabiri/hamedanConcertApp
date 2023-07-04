@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hamedanconcert/model/news.dart';
+import '../model/news.dart';
 
 class NewsSc extends StatelessWidget {
   final int index;

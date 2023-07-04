@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:hamedanconcert/screens/singup_number_sc.dart';
+import '../screens/singup_number_sc.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:hamedanconcert/screens/singup_information_sc.dart';
+import '../screens/singup_information_sc.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
